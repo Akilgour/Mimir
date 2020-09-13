@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Server", "Mimir\Server\Mimir.Server.csproj", "{D2C2C3A3-1BAC-4D30-A74E-D649392C5255}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mimir.Server", "Mimir\Server\Mimir.Server.csproj", "{D2C2C3A3-1BAC-4D30-A74E-D649392C5255}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Client", "Mimir\Client\Mimir.Client.csproj", "{D489804E-9AA0-47B6-8A3A-D2E7DEC4EBB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mimir.Client", "Mimir\Client\Mimir.Client.csproj", "{D489804E-9AA0-47B6-8A3A-D2E7DEC4EBB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Shared", "Mimir\Shared\Mimir.Shared.csproj", "{F338D228-0C3F-4207-91E5-C48A3BD79EEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mimir.Shared", "Mimir\Shared\Mimir.Shared.csproj", "{F338D228-0C3F-4207-91E5-C48A3BD79EEE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{D6770974-4751-4F1F-BACB-11817ABAD5D1}"
 EndProject
@@ -17,11 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{688CA300-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A2330C9B-D351-4DD1-9305-0E1CBD6EE10D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Data", "ClassLibrary1\Mimir.Data.csproj", "{35DA1DFF-F303-4C3F-BBF8-A2CA051815D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mimir.Data", "ClassLibrary1\Mimir.Data.csproj", "{35DA1DFF-F303-4C3F-BBF8-A2CA051815D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Domain", "Mimir.Domain\Mimir.Domain.csproj", "{BBBAD0AA-2060-46BD-8965-568DDA3835E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mimir.Domain", "Mimir.Domain\Mimir.Domain.csproj", "{BBBAD0AA-2060-46BD-8965-568DDA3835E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Service", "Mimir.Service\Mimir.Service.csproj", "{FA86F2B3-4140-4F12-B135-F4B31553A167}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mimir.Service", "Mimir.Service\Mimir.Service.csproj", "{FA86F2B3-4140-4F12-B135-F4B31553A167}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
