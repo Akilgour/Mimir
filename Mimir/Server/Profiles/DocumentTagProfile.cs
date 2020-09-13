@@ -8,7 +8,7 @@ namespace Mimir.Server.Profiles
     {
         public DocumentTagProfile()
         {
-            CreateMap<DocumentTagDisplay, DocumentTag>();
+            CreateMap< DocumentTag, DocumentTagDisplay>();
         }
     }
 }

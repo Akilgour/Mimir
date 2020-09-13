@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
 using Autofac;
+using AutoMapper.Contrib.Autofac.DependencyInjection;
 
 namespace Mimir.Server
 {
@@ -39,7 +40,7 @@ namespace Mimir.Server
             // when building the host or this won't be called.
 
             builder.RegisterModule(new Autofac.AutofacConfiguration());
-      
+            builder.AddAutoMapper(typeof(Startup).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
