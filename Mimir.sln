@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Client", "Mimir\Clien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Shared", "Mimir\Shared\Mimir.Shared.csproj", "{F338D228-0C3F-4207-91E5-C48A3BD79EEE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{D6770974-4751-4F1F-BACB-11817ABAD5D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A70D37DD-8BDD-4CE1-A6DC-8947F2856AAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{688CA300-882E-4743-8796-AD6FA2611AA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +36,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2C2C3A3-1BAC-4D30-A74E-D649392C5255} = {A70D37DD-8BDD-4CE1-A6DC-8947F2856AAD}
+		{D489804E-9AA0-47B6-8A3A-D2E7DEC4EBB1} = {A70D37DD-8BDD-4CE1-A6DC-8947F2856AAD}
+		{F338D228-0C3F-4207-91E5-C48A3BD79EEE} = {A70D37DD-8BDD-4CE1-A6DC-8947F2856AAD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0FC1AA84-EFF1-4FE3-BF7B-2171FACED59E}
