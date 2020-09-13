@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Data", "ClassLibrary1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Domain", "Mimir.Domain\Mimir.Domain.csproj", "{BBBAD0AA-2060-46BD-8965-568DDA3835E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimir.Service", "Mimir.Service\Mimir.Service.csproj", "{FA86F2B3-4140-4F12-B135-F4B31553A167}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{BBBAD0AA-2060-46BD-8965-568DDA3835E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBBAD0AA-2060-46BD-8965-568DDA3835E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBBAD0AA-2060-46BD-8965-568DDA3835E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA86F2B3-4140-4F12-B135-F4B31553A167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA86F2B3-4140-4F12-B135-F4B31553A167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA86F2B3-4140-4F12-B135-F4B31553A167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA86F2B3-4140-4F12-B135-F4B31553A167}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{A2330C9B-D351-4DD1-9305-0E1CBD6EE10D} = {A70D37DD-8BDD-4CE1-A6DC-8947F2856AAD}
 		{35DA1DFF-F303-4C3F-BBF8-A2CA051815D9} = {A2330C9B-D351-4DD1-9305-0E1CBD6EE10D}
 		{BBBAD0AA-2060-46BD-8965-568DDA3835E9} = {A2330C9B-D351-4DD1-9305-0E1CBD6EE10D}
+		{FA86F2B3-4140-4F12-B135-F4B31553A167} = {A70D37DD-8BDD-4CE1-A6DC-8947F2856AAD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0FC1AA84-EFF1-4FE3-BF7B-2171FACED59E}

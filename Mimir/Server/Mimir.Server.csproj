@@ -6,9 +6,14 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Mimir.Service\Mimir.Service.csproj" />
     <ProjectReference Include="..\Client\Mimir.Client.csproj" />
     <ProjectReference Include="..\Shared\Mimir.Shared.csproj" />
   </ItemGroup>
