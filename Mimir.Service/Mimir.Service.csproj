@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\Mimir.Data.csproj" />
+    <ProjectReference Include="..\Mimir\Shared\Mimir.Shared.csproj" />
   </ItemGroup>
 
 </Project>

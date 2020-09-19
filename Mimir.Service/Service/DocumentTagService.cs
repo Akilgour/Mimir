@@ -1,6 +1,7 @@
 ﻿using Mimir.Data.Repositorys.Interface;
 using Mimir.Domain.Models;
 using Mimir.Service.Service.Interface;
+using Mimir.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,11 @@ namespace Mimir.Service.Service
         public DocumentTagService(IDocumentTagRepository documentTagRepository)
         {
             _documentTagRepository = documentTagRepository;
+        }
+
+        public async Task<DocumentTag> Get(DocumentTagGetRequest request)
+        {
+            return await _documentTagRepository.GetById(request.DocumentTagId);
         }
 
         public async Task<List<DocumentTag>> GetAll()

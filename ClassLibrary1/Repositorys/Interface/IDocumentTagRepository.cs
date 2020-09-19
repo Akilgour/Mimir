@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Mimir.Data.Repositorys.Interface
 {
-    public interface IDocumentTagRepository
+    public interface IDocumentTagRepository : IRepository<DocumentTag>
     {
         Task<List<DocumentTag>> GetAll();
     }

@@ -1,4 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Mimir.Shared.Models;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Mimir.Client.Pages
 {
@@ -6,9 +10,31 @@ namespace Mimir.Client.Pages
     {
         [Parameter]
         public string DocumentTagId { get; set; }
+      
+        [Inject]
+        public HttpClient Http { get; set; }
 
-        protected override void OnInitialized()
+        public DocumentTagGetResponse DocumentTag { get; set; }
+
+        protected override async Task OnInitializedAsync()
         {
+            DocumentTag = await Http.GetJsonAsync<DocumentTagGetResponse>($"api/DocumentTag/{DocumentTagId}");
+        }
+
+        protected string Message = string.Empty;
+        protected string StatusClass = string.Empty;
+
+        protected void HandleValidSubmit()
+        {
+         //   await Http.PutAsJsonAsync($"api/StockItem", StockItem);
+            StatusClass = "alert-success";
+            Message = "Comment successfully.";
+        }
+
+        protected void HandleInvalidSubmit()
+        {
+            StatusClass = "alert-danger";
+            Message = "There are some validation errors. Please try again.";
         }
     }
 }
