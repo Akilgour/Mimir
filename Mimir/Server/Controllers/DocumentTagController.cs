@@ -1,32 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Mimir.Server.Endpoint.DocumentTagEndpoint;
 using Mimir.Server.Manager.Interface;
-using Mimir.Shared.Models;
-using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Mimir.Server.Controllers
 {
-    public class GetRequest : IRequest<List<DocumentTagGetResponse>>
-    {
-    }
-
-    public class GetHandler : IRequestHandler<GetRequest, List<DocumentTagGetResponse>>
-    {
-        private readonly IDocumentTagManager _documentTagManager;
-
-        public GetHandler(IDocumentTagManager documentTagManager)
-        {
-            _documentTagManager = documentTagManager ?? throw new System.ArgumentNullException(nameof(documentTagManager));
-        }
-
-        public async Task<List<DocumentTagGetResponse>> Handle(GetRequest request, CancellationToken cancellationToken)
-        {
-            return await _documentTagManager.GetAll();
-        }
-    }
-
     [Route("api/[controller]")]
     [ApiController]
     public class DocumentTagController : ControllerBase
@@ -41,7 +20,7 @@ namespace Mimir.Server.Controllers
         [HttpGet]
         public async Task<ActionResult> Get()
         {
-            var result = await _mediator.Send(new GetRequest());
+            var result = await _mediator.Send(new DocumentTagGetRequest());
             return Ok(result);
         }
     }
