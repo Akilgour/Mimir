@@ -19,7 +19,7 @@ namespace Mimir.Server.Controllers
         [HttpGet]
         public async Task<ActionResult> Get()
         {
-            var result = await _mediator.Send(new DocumentTagGetRequest());
+            var result = await _mediator.Send(new DocumentTagListRequest());
             return Ok(result);
         }
     }

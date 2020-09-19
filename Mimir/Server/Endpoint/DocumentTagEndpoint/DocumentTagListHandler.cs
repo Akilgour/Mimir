@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace Mimir.Server.Endpoint.DocumentTagEndpoint
 {
-    public class DocumentTagGetRequest : IRequest<List<DocumentTagGetResponse>>
+    public class DocumentTagListRequest : IRequest<List<DocumentTagListResponse>>
     {
     }
 
-    public class DocumentTagGetHandler : BaseHandler, IRequestHandler<DocumentTagGetRequest, List<DocumentTagGetResponse>>
+    public class DocumentTagListHandler : BaseHandler, IRequestHandler<DocumentTagListRequest, List<DocumentTagListResponse>>
     {
         private readonly IDocumentTagService _documentTagService;
 
-        public DocumentTagGetHandler(IDocumentTagService documentTagService, IMapper mapper)
+        public DocumentTagListHandler(IDocumentTagService documentTagService, IMapper mapper)
             : base(mapper)
         {
             _documentTagService = documentTagService ?? throw new System.ArgumentNullException(nameof(documentTagService));
         }
 
-        public async Task<List<DocumentTagGetResponse>> Handle(DocumentTagGetRequest request, CancellationToken cancellationToken)
+        public async Task<List<DocumentTagListResponse>> Handle(DocumentTagListRequest request, CancellationToken cancellationToken)
         {
-            return _mapper.Map<List<DocumentTagGetResponse>>(await _documentTagService.GetAll());
+            return _mapper.Map<List<DocumentTagListResponse>>(await _documentTagService.GetAll());
         }
     }
 
@@ -33,7 +33,7 @@ namespace Mimir.Server.Endpoint.DocumentTagEndpoint
     {
         public DocumentTagProfile()
         {
-            CreateMap<DocumentTag, DocumentTagGetResponse>();
+            CreateMap<DocumentTag, DocumentTagListResponse>();
         }
     }
 }
