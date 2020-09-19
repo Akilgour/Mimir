@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Mimir.Server.Endpoint.DocumentTagEndpoint;
-using Mimir.Server.Manager.Interface;
 using System.Threading.Tasks;
 
 namespace Mimir.Server.Controllers
@@ -12,7 +11,7 @@ namespace Mimir.Server.Controllers
     {
         private readonly IMediator _mediator;
 
-        public DocumentTagController(IDocumentTagManager documentTagManager, IMediator mediator)
+        public DocumentTagController(IMediator mediator)
         {
             _mediator = mediator ?? throw new System.ArgumentNullException(nameof(mediator));
         }

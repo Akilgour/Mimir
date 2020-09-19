@@ -9,10 +9,6 @@ namespace Mimir.Server.Autofac
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterModule(new MimirServiceModule());
-
-            builder.RegisterAssemblyTypes(ThisAssembly)
-                .Where(t => t.Name.EndsWith("Manager"))
-                .AsImplementedInterfaces();
         }
     }
 }

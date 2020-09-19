@@ -1,5 +1,7 @@
-﻿using MediatR;
-using Mimir.Server.Manager.Interface;
+﻿using AutoMapper;
+using MediatR;
+using Mimir.Domain.Models;
+using Mimir.Service.Service.Interface;
 using Mimir.Shared.Models;
 using System.Collections.Generic;
 using System.Threading;
@@ -11,18 +13,27 @@ namespace Mimir.Server.Endpoint.DocumentTagEndpoint
     {
     }
 
-    public class DocumentTagGetHandler : IRequestHandler<DocumentTagGetRequest, List<DocumentTagGetResponse>>
+    public class DocumentTagGetHandler : BaseHandler, IRequestHandler<DocumentTagGetRequest, List<DocumentTagGetResponse>>
     {
-        private readonly IDocumentTagManager _documentTagManager;
+        private readonly IDocumentTagService _documentTagService;
 
-        public DocumentTagGetHandler(IDocumentTagManager documentTagManager)
+        public DocumentTagGetHandler(IDocumentTagService documentTagService, IMapper mapper)
+            : base(mapper)
         {
-            _documentTagManager = documentTagManager ?? throw new System.ArgumentNullException(nameof(documentTagManager));
+            _documentTagService = documentTagService ?? throw new System.ArgumentNullException(nameof(documentTagService));
         }
 
         public async Task<List<DocumentTagGetResponse>> Handle(DocumentTagGetRequest request, CancellationToken cancellationToken)
         {
-            return await _documentTagManager.GetAll();
+            return _mapper.Map<List<DocumentTagGetResponse>>(await _documentTagService.GetAll());
+        }
+    }
+
+    internal class DocumentTagProfile : Profile
+    {
+        public DocumentTagProfile()
+        {
+            CreateMap<DocumentTag, DocumentTagGetResponse>();
         }
     }
 }
