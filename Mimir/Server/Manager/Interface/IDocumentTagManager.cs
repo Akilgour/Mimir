@@ -6,6 +6,6 @@ namespace Mimir.Server.Manager.Interface
 {
     public interface IDocumentTagManager
     {
-        Task<List<DocumentTagDisplay>> GetAll();
+        Task<List<DocumentTagGetResponse>> GetAll();
     }
 }

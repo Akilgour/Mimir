@@ -2,7 +2,7 @@
 
 namespace Mimir.Shared.Models
 {
-    public class DocumentTagDisplay
+    public class DocumentTagGetResponse
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

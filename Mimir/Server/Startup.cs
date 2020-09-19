@@ -1,13 +1,11 @@
+using Autofac;
+using AutoMapper.Contrib.Autofac.DependencyInjection;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Linq;
-using Autofac;
-using AutoMapper.Contrib.Autofac.DependencyInjection;
 
 namespace Mimir.Server
 {
@@ -24,11 +22,13 @@ namespace Mimir.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllersWithViews();
             services.AddRazorPages();
-        }
 
+            // Install - Package MediatR
+            //  Install - Package MediatR.Extensions.Microsoft.DependencyInjection
+            services.AddMediatR(typeof(Startup));
+        }
 
         public void ConfigureContainer(ContainerBuilder builder)
         {

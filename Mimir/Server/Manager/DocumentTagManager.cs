@@ -17,9 +17,9 @@ namespace Mimir.Server.Manager
             _documentTagService = documentTagService ?? throw new System.ArgumentNullException(nameof(documentTagService));
         }
 
-        public async Task<List<DocumentTagDisplay>> GetAll()
+        public async Task<List<DocumentTagGetResponse>> GetAll()
         {
-            return _mapper.Map<List<DocumentTagDisplay>>(await _documentTagService.GetAll());
+            return _mapper.Map<List<DocumentTagGetResponse>>(await _documentTagService.GetAll());
         }
     }
 }

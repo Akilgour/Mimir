@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Mimir.Domain.Models;
+using Mimir.Server.Controllers;
 using Mimir.Shared.Models;
 
 namespace Mimir.Server.Profiles
@@ -8,7 +9,7 @@ namespace Mimir.Server.Profiles
     {
         public DocumentTagProfile()
         {
-            CreateMap< DocumentTag, DocumentTagDisplay>();
+            CreateMap< DocumentTag, DocumentTagGetResponse>();
         }
     }
 }
