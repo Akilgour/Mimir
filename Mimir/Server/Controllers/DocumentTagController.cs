@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Mimir.Server.Manager.Interface;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Mimir.Server.Endpoint.DocumentTagEndpoint;
 using System.Threading.Tasks;
 
 namespace Mimir.Server.Controllers
@@ -8,17 +9,17 @@ namespace Mimir.Server.Controllers
     [ApiController]
     public class DocumentTagController : ControllerBase
     {
-        private readonly IDocumentTagManager _documentTagManager;
+        private readonly IMediator _mediator;
 
-        public DocumentTagController(IDocumentTagManager documentTagManager)
+        public DocumentTagController(IMediator mediator)
         {
-            _documentTagManager = documentTagManager ?? throw new System.ArgumentNullException(nameof(documentTagManager));
+            _mediator = mediator ?? throw new System.ArgumentNullException(nameof(mediator));
         }
 
         [HttpGet]
         public async Task<ActionResult> Get()
         {
-            var result = await _documentTagManager.GetAll();
+            var result = await _mediator.Send(new DocumentTagListRequest());
             return Ok(result);
         }
     }
