@@ -31,5 +31,21 @@ namespace Mimir.Server.Controllers
             var result = await _mediator.Send(new DocumentTagGetRequest(documentTagId));
             return Ok(result);
         }
+
+        //[HttpPut("/api/DocumentTag9*+-" +
+        //    "3.")]
+        //public async override Task<ActionResult> HandleAsync(StockItemUpdate request)
+        //{
+        //    var result = await _stockManager.Update(request);
+
+        //    if (result == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    else
+        //    {
+        //        return Ok(result);
+        //    }
+        //}
     }
 }

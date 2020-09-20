@@ -3,43 +3,54 @@
 
 <h3>DocumentTagEdit</h3>
 
-
 @if (DocumentTag == null)
 {
     <p><em>Loading  </em></p>
 }
 else
 {
-    <EditForm Model="@DocumentTag" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
-        <div class="alert @StatusClass">
-            @Message
-            <DataAnnotationsValidator />
-            <ValidationSummary />
+<EditForm Model="@DocumentTag" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+
+    <FluentValidationValidator />
+
+    <div class="alert @StatusClass">
+        @Message
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-3">Name: </label>
+        <InputText class="form-control col-sm-8" @bind-Value="@DocumentTag.Name" placeholder="Enter Name" />
+        <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => DocumentTag.Name)" />
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-3">Name: </label>
+        <div class="col-sm-9">
+            <InputText class="form-control" @bind-Value="@DocumentTag.Name" placeholder="Enter Name" />
+            <ValidationMessage For="@(() => DocumentTag.Name)" />
         </div>
+    </div>
 
-        <div class="form-group row">
-            <label class="col-sm-3">Name: </label>
-            <InputText class="form-control col-sm-8" @bind-Value="@DocumentTag.Name" placeholder="Enter Name" />
-            <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => DocumentTag.Name)" />
+    <div class="form-group row">
+        <label class="col-sm-3">Description: </label>
+        <div class="col-sm-9">
+            <InputText class="form-control" @bind-Value="@DocumentTag.Description" placeholder="Enter Name" />
+            <ValidationMessage For="@(() => DocumentTag.Description)" />
         </div>
+    </div>
 
-        <div class="form-group row">
-            <label class="col-sm-3">Description: </label>
-            <InputText class="form-control col-sm-8" @bind-Value="@DocumentTag.Description" placeholder="Enter Description" />
-            <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => DocumentTag.Description)" />
-        </div>
+    <div class="float-right">
+        <button type="submit" class="btn btn-primary edit-btn">
+            Save
+            <i class="fas fa-save"></i>
+        </button>
 
-        <div class="float-right">
-            <button type="submit" class="btn btn-primary edit-btn">
-                Save
-                <i class="fas fa-save"></i>
-            </button>
-
-            <a href="@($"DocumentTagAdmin")" class="btn btn-outline-primary">
-                Cancel
-            </a>
-
-        </div>
-    </EditForm>
+        <a href="@($"DocumentTagAdmin")" class="btn btn-outline-primary">
+            Cancel
+        </a>
+    </div>
+</EditForm>
 
 }
