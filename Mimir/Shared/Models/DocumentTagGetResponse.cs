@@ -14,8 +14,15 @@ namespace Mimir.Shared.Models
     {
         public DocumentTagGetResponseValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().WithMessage("You must enter a name");
-            RuleFor(x => x.Description).NotEmpty().WithMessage("You must enter a description");
+            RuleFor(x => x.Name)
+                .Cascade(CascadeMode.Stop)
+                .NotEmpty().WithMessage("You must enter a {PropertyName}")
+                .Length(2, 50).WithMessage("Length({TotalLength}) of {PropertyName} is Invalid.  Must be between {MinLength} - {MaxLength}");
+
+            RuleFor(x => x.Description)
+            .Cascade(CascadeMode.Stop)
+            .NotEmpty().WithMessage("You must enter a {PropertyName}")
+            .Length(2, 50).WithMessage("Length({TotalLength}) of {PropertyName} Invalid.  Must be between {MinLength} - {MaxLength}");
         }
     }
 }
