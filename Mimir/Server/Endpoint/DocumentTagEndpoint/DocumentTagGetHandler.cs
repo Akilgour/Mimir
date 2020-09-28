@@ -20,7 +20,7 @@ namespace Mimir.Server.Endpoint.DocumentTagEndpoint
 
         async Task<DocumentTagGetResponse> IRequestHandler<DocumentTagGetRequest, DocumentTagGetResponse>.Handle(DocumentTagGetRequest request, CancellationToken cancellationToken)
         {
-            return _mapper.Map<DocumentTagGetResponse>(await _documentTagService.Get(request));
+            return _mapper.Map<DocumentTagGetResponse>(await _documentTagService.Get(request.DocumentTagId));
         }
     }
 

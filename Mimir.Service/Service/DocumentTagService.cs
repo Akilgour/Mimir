@@ -19,14 +19,19 @@ namespace Mimir.Service.Service
             _documentTagRepository = documentTagRepository;
         }
 
-        public async Task<DocumentTag> Get(DocumentTagGetRequest request)
+        public async Task<DocumentTag> Get(Guid documentTagId)
         {
-            return await _documentTagRepository.GetById(request.DocumentTagId);
+            return await _documentTagRepository.GetById(documentTagId);
         }
 
         public async Task<List<DocumentTag>> GetAll()
         {
             return await _documentTagRepository.GetAll();
+        }
+
+        public async Task<DocumentTag> Update(DocumentTag documentTag)
+        {
+            return await _documentTagRepository.Update(documentTag);
         }
     }
 }

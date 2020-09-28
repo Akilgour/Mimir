@@ -32,20 +32,19 @@ namespace Mimir.Server.Controllers
             return Ok(result);
         }
 
-        //[HttpPut("/api/DocumentTag9*+-" +
-        //    "3.")]
-        //public async override Task<ActionResult> HandleAsync(StockItemUpdate request)
-        //{
-        //    var result = await _stockManager.Update(request);
+        [HttpPut("/api/DocumentTag")]
+        public async Task<ActionResult> Update(DocumentTagUpdateRequest request)
+        {
+            var result = (DocumentTagUpdateResponse)await _mediator.Send(request);
+            if (!result.FoundInRepository)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(result);
+            }
 
-        //    if (result == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    else
-        //    {
-        //        return Ok(result);
-        //    }
-        //}
+        }
     }
 }

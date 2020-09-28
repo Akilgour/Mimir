@@ -1,5 +1,5 @@
 ﻿using Mimir.Domain.Models;
-using Mimir.Shared.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -8,6 +8,8 @@ namespace Mimir.Service.Service.Interface
     public interface IDocumentTagService
     {
         Task<List<DocumentTag>> GetAll();
-        Task<DocumentTag> Get(DocumentTagGetRequest request);
+
+        Task<DocumentTag> Get(Guid documentTagId);
+        Task<DocumentTag> Update(DocumentTag documentTag);
     }
 }

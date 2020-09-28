@@ -2,6 +2,7 @@
 using Mimir.Shared.Models;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace Mimir.Client.Pages
@@ -24,9 +25,10 @@ namespace Mimir.Client.Pages
         protected string Message = string.Empty;
         protected string StatusClass = string.Empty;
 
-        protected void HandleValidSubmit()
+        protected async Task HandleValidSubmit()
         {
-         //   await Http.PutAsJsonAsync($"api/StockItem", StockItem);
+            var documentTagUpdateRequest = new DocumentTagUpdateRequest(DocumentTag);
+            await Http.PutAsJsonAsync($"api/DocumentTag", documentTagUpdateRequest);
             StatusClass = "alert-success";
             Message = "Comment successfully.";
         }
