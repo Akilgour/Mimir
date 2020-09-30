@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Mimir.Server.Endpoint.DocumentTagEndpoint
 {
 
-    public class DocumentTagUpdateHandler : BaseHandler, IRequestHandler<DocumentTagUpdateRequest, DocumentTagUpdateResponse>
+    public class DocumentTagUpdateHandler : BaseHandler, IRequestHandler<DocumentTagGetResponse, DocumentTagUpdateResponse>
     {
         private readonly IDocumentTagService _documentTagService;
 
@@ -21,11 +21,11 @@ namespace Mimir.Server.Endpoint.DocumentTagEndpoint
             _documentTagService = documentTagService ?? throw new System.ArgumentNullException(nameof(documentTagService));
         }
 
-        public async Task<DocumentTagUpdateResponse> Handle(DocumentTagUpdateRequest request, CancellationToken cancellationToken)
+        public async Task<DocumentTagUpdateResponse> Handle(DocumentTagGetResponse request, CancellationToken cancellationToken)
         {
             var response = new DocumentTagUpdateResponse();
-            var documentTag =  await _documentTagService.Get(request.Id);
-            if(documentTag == null)
+            var documentTag = await _documentTagService.Get(request.Id);
+            if (documentTag == null)
             {
                 response.FoundInRepository = false;
             }
@@ -38,12 +38,12 @@ namespace Mimir.Server.Endpoint.DocumentTagEndpoint
             return response;
         }
 
-        internal class DocumentTagUpdateProfile : Profile
+    internal class DocumentTagUpdateProfile : Profile
         {
             public DocumentTagUpdateProfile()
             {
                 //For the updateing from the item from repository with the item from the API request
-                CreateMap<DocumentTagUpdateRequest, DocumentTag>();
+                CreateMap<DocumentTagGetResponse, DocumentTag>();
 
                 //For the response 
                 CreateMap<DocumentTag, DocumentTagUpdateResponse>();

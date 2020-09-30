@@ -27,8 +27,7 @@ namespace Mimir.Client.Pages
 
         protected async Task HandleValidSubmit()
         {
-            var documentTagUpdateRequest = new DocumentTagUpdateRequest(DocumentTag);
-            await Http.PutAsJsonAsync($"api/DocumentTag", documentTagUpdateRequest);
+            await Http.PutAsJsonAsync($"api/DocumentTag", DocumentTag);
             StatusClass = "alert-success";
             Message = "Comment successfully.";
         }

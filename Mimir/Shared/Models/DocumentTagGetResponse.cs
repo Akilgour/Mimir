@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
+using MediatR;
 using Mimir.Shared.Validator;
 using System;
 
 namespace Mimir.Shared.Models
 {
-    public class DocumentTagGetResponse
+    public class DocumentTagGetResponse : IRequest<DocumentTagUpdateResponse>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

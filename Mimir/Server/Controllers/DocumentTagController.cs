@@ -33,7 +33,7 @@ namespace Mimir.Server.Controllers
         }
 
         [HttpPut("/api/DocumentTag")]
-        public async Task<ActionResult> Update(DocumentTagUpdateRequest request)
+        public async Task<ActionResult> Update(DocumentTagGetResponse request)
         {
             var result = (DocumentTagUpdateResponse)await _mediator.Send(request);
             if (!result.FoundInRepository)
